@@ -11,7 +11,7 @@ def sortNames(fileName, targetFile):
     names = file.readlines()
     file.close()
 
-    names = [name.strip() for name in names]
+    names = [name.strip() for name in names if name.strip()]
     names.sort()
 
     file = open(targetFile, "w")
@@ -30,7 +30,7 @@ def highScore(newScore: int):
     scores = file.readlines()
     file.close()
 
-    scores = [int(score.strip()) for score in scores]
+    scores = [int(score.strip()) for score in scores if score.strip()]
     average = sum(scores) / len(scores)
     return average
 
